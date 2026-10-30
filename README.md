@@ -93,7 +93,7 @@ To use this server with Claude Desktop from a local clone, use the same config f
       "args": [
         "run",
         "--with",
-        "mcp[cli]",
+        "mcp[cli]<2",
         "mcp",
         "run",
         "/absolute/path/to/brewfather-mcp/src/main.py"
@@ -118,7 +118,7 @@ You may also need to provide the full path to the uv command.
 #### Other MCP Clients
 
 For other MCP clients that support stdio transport, use:
-- **Command**: `uv run --with mcp[cli] mcp run src/main.py`
+- **Command**: `uv run --with 'mcp[cli]<2' mcp run src/main.py`
 - **Working Directory**: Path to this repository
 - **Environment Variables**: `BREWFATHER_API_USER_ID` and `BREWFATHER_API_KEY`
 
@@ -176,10 +176,10 @@ uv run pytest
 
 ```bash
 # List available tools
-mcpt tools uv run --with 'mcp[cli]' mcp run src/main.py
+mcpt tools uv run --with 'mcp[cli]<2' mcp run src/main.py
 
 # Call a specific tool
-mcpt call list_inventory_categories uv run --with 'mcp[cli]' mcp run src/main.py
+mcpt call list_inventory_categories uv run --with 'mcp[cli]<2' mcp run src/main.py
 ```
 
 ### HTTP/SSE Server (for cloud deployment)
@@ -206,5 +206,5 @@ PYTHONPATH=src uv run python src/http_runner.py --port 8000
 
 Enable debug mode to save API responses into a debug folder for troubleshooting:
 ```bash
-BREWFATHER_MCP_DEBUG=1 mcpt call get_batch_detail --params '{"batch_id": "your-batch-id"}' uv run --with 'mcp[cli]' mcp run src/main.py
+BREWFATHER_MCP_DEBUG=1 mcpt call get_batch_detail --params '{"batch_id": "your-batch-id"}' uv run --with 'mcp[cli]<2' mcp run src/main.py
 ```

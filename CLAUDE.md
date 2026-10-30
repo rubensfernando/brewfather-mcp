@@ -25,14 +25,14 @@ The server supports two transport modes:
 #### stdio (Local Development)
 When using claude code, use mcpt commands to test changes to this server. The inbuilt mcp tools don't get reloaded after changes.
 
-- `uv run --with mcp[cli] mcp install` - Install MCP CLI tools
-- `uv run --with 'mcp[cli]' mcp run src/main.py` - Run server
-- `uv run --with 'mcp[cli]' mcp dev src/main.py` - Run server with inspector
-- `mcpt tools uv run --with 'mcp[cli]' mcp run src/main.py` - Use MCP Tools to list tools
-- `mcpt call list_batches  uv run --with 'mcp[cli]' mcp run src/main.py` - Call a tool
-- `mcpt call get_batch_detail --params '{ "batch_id": "C3hZC7P4zeNH6QJsc7FXizVGN8dkQe" }'  uv run --with 'mcp[cli]' mcp run src/main.py` - Call a tool with params
-- `BREWFATHER_MCP_DEBUG=1 mcpt call get_batch_detail --params '{ "batch_id": "C3hZC7P4zeNH6QJsc7FXizVGN8dkQe" }' uv run --with 'mcp[cli]' mcp run src/main.py` - Call tool with debug mode to save API calls to file
-- `alias -g BF="uv run --with 'mcp[cli]' mcp run src/main.py"` - Alias to use with mcpt, eg `mcpt tools BF`
+- `uv run --with 'mcp[cli]<2' mcp install` - Install MCP CLI tools
+- `uv run --with 'mcp[cli]<2' mcp run src/main.py` - Run server
+- `uv run --with 'mcp[cli]<2' mcp dev src/main.py` - Run server with inspector
+- `mcpt tools uv run --with 'mcp[cli]<2' mcp run src/main.py` - Use MCP Tools to list tools
+- `mcpt call list_batches  uv run --with 'mcp[cli]<2' mcp run src/main.py` - Call a tool
+- `mcpt call get_batch_detail --params '{ "batch_id": "C3hZC7P4zeNH6QJsc7FXizVGN8dkQe" }'  uv run --with 'mcp[cli]<2' mcp run src/main.py` - Call a tool with params
+- `BREWFATHER_MCP_DEBUG=1 mcpt call get_batch_detail --params '{ "batch_id": "C3hZC7P4zeNH6QJsc7FXizVGN8dkQe" }' uv run --with 'mcp[cli]<2' mcp run src/main.py` - Call tool with debug mode to save API calls to file
+- `alias -g BF="uv run --with 'mcp[cli]<2' mcp run src/main.py"` - Alias to use with mcpt, eg `mcpt tools BF`
 
 #### HTTP/SSE (Web/Cloud Deployment)
 For testing the HTTP server or deployment to cloud platforms:
